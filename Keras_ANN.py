@@ -19,11 +19,11 @@ X = dataset1
 Y = dataset2
 # create model
 model = Sequential()
-model.add(Dense(12, input_dim=8, activation='relu'))
+model.add(Dense(12, input_dim=numpy.shape(dataset1)[1], activation='relu'))
 model.add(Dropout(.7))                              # to reduce overfitting
 model.add(Dense(7, activation='relu'))
-model.add(Dropout(.7)))                             # to reduce overfitting
-model.add(Dense(5, activation='sigmoid'))
+model.add(Dropout(.7))                              # to reduce overfitting
+model.add(Dense(numpy.shape(dataset2)[1], activation='sigmoid'))
 # Compile model
 model.compile(loss='binary_crossentropy', optimizer='adam', metrics=['accuracy'])
 # Fit the model
